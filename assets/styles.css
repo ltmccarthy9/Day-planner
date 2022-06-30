@@ -26,8 +26,10 @@ body {
   }
   
   .time-block{
-    text-align: center;
+    text-align: left;
     border-radius: 15px;
+    width: 60%;
+    justify-content: center;
   }
   
   .row {
@@ -63,6 +65,7 @@ body {
     border-bottom-right-radius: 15px;
     background-color: #06AED5;
     color: white;
+    width: 6%;
   }
   
   .saveBtn i:hover {
@@ -76,4 +79,22 @@ body {
 
   #date-my {
     font-size: 300%;
+  }
+
+  .container{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 5%;
+    padding-right: 5%;
+
+  }
+
+  .container label {
+    border-top: solid;
+  }
+
+  .labs {
+    width: 6%;
   }
