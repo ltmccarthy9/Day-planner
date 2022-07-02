@@ -91,6 +91,7 @@ $(document).ready(function () {
     setInterval(updateSeconds, 1000);
     setInterval(countdown, 1);
 
+    displayText();
     //change colors of time-blocks by grabbing each id that correlates to the hour.
     var currentHour = moment().hour();
     console.log(currentHour);
@@ -121,5 +122,11 @@ $(document).ready(function () {
         localStorage.setItem(hourID, textInput);
     })
 
+    function displayText() {
+        $(".time-block").each(function(){
+            var hourID2 = $(this).attr("id");
+            $(this).val(localStorage.getItem(hourID2));
+        })
+    }
 })
 
