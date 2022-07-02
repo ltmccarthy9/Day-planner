@@ -2,6 +2,7 @@ $(document).ready(function () {
 
     // Static
 
+
     // The first basic method of Moment.js is the moment() method. Use this to get today's info!
     console.log(moment());
 
@@ -90,5 +91,46 @@ $(document).ready(function () {
     setInterval(updateSeconds, 1000);
     setInterval(countdown, 1);
 
+    var currentHour = moment().hour();
+    console.log(currentHour);
+    changeColor();
+    function changeColor() {
+        $(".time-block").each(function(){
+            var hour = parseInt($(this).attr("id"));
+            console.log(hour);
+            if (currentHour > hour) {
+                $(this).addClass("past");
+            }else if (currentHour === hour){
+                $(this).removeClass("past");
+                $(this).addClass("present");
+            }else {
+                $(this).removeClass("past");
+                $(this).removeClass("present");
+                $(this).addClass("future");
+            }
+        })
+    }
+
 })
 
+
+//use momentjs to guide conditional coloring of timeblocks
+//OPTIONS:
+    //set all timeblocks to "future(green)" as default
+    // example conditional: if (moment()isBetween(12:00 and 1:00 am)) 
+ //                                 $hour1 class = present
+ //                         else if (moment()is after 1:00 am) 
+//                                  $hour1 class = past
+//                          else  class = future
+ //
+ //
+ // FOR DISPLAYINNG TEXT       
+ //  assign text to variable for each hour.  ie: var hour1Text = ...localstorage
+ //  Save this upon click of save button. display it outside of this event 
+ //
+ //                    ["11:00"]
+//                    if (moment()isBetween(12:00 and 1:00 am)) 
+//                                 $hour1 class = present
+//                    else if (moment()is after 1:00 am) 
+//                                  $hour1 class = past
+//                    else  class = future
