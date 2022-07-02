@@ -16,6 +16,8 @@ write what they want to do in those hours and save it so that it continues to di
 * github
 * bootstrap
 * Visual Studio Code
+* JQuery
+* Momentjs
 
 ## Deployed Link
 
