@@ -91,14 +91,18 @@ $(document).ready(function () {
     setInterval(updateSeconds, 1000);
     setInterval(countdown, 1);
 
+    //change colors of time-blocks by grabbing each id that correlates to the hour.
     var currentHour = moment().hour();
     console.log(currentHour);
     changeColor();
+    setInterval(changeColor, 60000);
     function changeColor() {
         $(".time-block").each(function(){
             var hour = parseInt($(this).attr("id"));
             console.log(hour);
             if (currentHour > hour) {
+                $(this).removeClass("present");
+                $(this).removeClass("future");
                 $(this).addClass("past");
             }else if (currentHour === hour){
                 $(this).removeClass("past");
@@ -110,27 +114,12 @@ $(document).ready(function () {
             }
         })
     }
+    //saves text in time-block on click of save button 
+    $('.saveBtn').on('click', function() {
+        var textInput = $(this).siblings('.time-block').val();
+        var hourID = $(this).siblings('.time-block').attr("id");
+        localStorage.setItem(hourID, textInput);
+    })
 
 })
 
-
-//use momentjs to guide conditional coloring of timeblocks
-//OPTIONS:
-    //set all timeblocks to "future(green)" as default
-    // example conditional: if (moment()isBetween(12:00 and 1:00 am)) 
- //                                 $hour1 class = present
- //                         else if (moment()is after 1:00 am) 
-//                                  $hour1 class = past
-//                          else  class = future
- //
- //
- // FOR DISPLAYINNG TEXT       
- //  assign text to variable for each hour.  ie: var hour1Text = ...localstorage
- //  Save this upon click of save button. display it outside of this event 
- //
- //                    ["11:00"]
-//                    if (moment()isBetween(12:00 and 1:00 am)) 
-//                                 $hour1 class = present
-//                    else if (moment()is after 1:00 am) 
-//                                  $hour1 class = past
-//                    else  class = future

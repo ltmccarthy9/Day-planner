@@ -32,7 +32,7 @@ body {
     justify-content: center;
     padding: 2px;
   }
-  
+
   .time-blocks{
     text-align: left;
     border-radius: 15px;
@@ -106,4 +106,5 @@ body {
 
   .labs {
     width: 6%;
+    font-size: 140%;
   }
