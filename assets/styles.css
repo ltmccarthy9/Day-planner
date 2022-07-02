@@ -15,10 +15,10 @@ body {
   
   .jumbotron {
     text-align: center;
-    background-color: transparent;
+    background-color: rgb(184, 218, 219);
     color: black;
     border-radius: 0;
-    border-bottom: 10px solid black;
+    border-bottom: 2px solid black;
   }
   
   .description{
@@ -31,6 +31,7 @@ body {
     width: 64%;
     justify-content: center;
     padding: 2px;
+    font-weight: bold;
   }
 
   .time-blocks{
@@ -83,7 +84,8 @@ body {
   }
   
   #time {
-    font-size: 300%;
+    font-size: 400%;
+    color: rgb(36, 35, 12);
   }
 
   #date-my {
@@ -109,6 +111,4 @@ body {
     font-size: 140%;
   }
 
-  .glyphicon .glyphicon-floppy-disk{
-    
-  }
+ 
