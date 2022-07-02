@@ -121,7 +121,7 @@ $(document).ready(function () {
         var hourID = $(this).siblings('.time-block').attr("id");
         localStorage.setItem(hourID, textInput);
     })
-
+    //displays local storage for given time block
     function displayText() {
         $(".time-block").each(function(){
             var hourID2 = $(this).attr("id");
